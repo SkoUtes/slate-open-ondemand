@@ -34,7 +34,7 @@ spec:
             - key: clusters.yaml
               path: clusters.yaml
         # Claim SLATE volume to persist Keycloak data.
-        - name: keycloak-db
+        - name: {{ .Values.claimName }}
           persistentVolumeClaim:
             claimName: {{ .Values.claimName }}
       containers:
